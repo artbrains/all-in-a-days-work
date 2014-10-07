@@ -1,0 +1,85 @@
+<html>
+      <head>
+      <link rel='stylesheet' id='css/style.css'  href="css/style.css" type='text/css' media='all' />
+         <title>The Darkness</title>
+         
+          <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+      </head>
+      
+      
+      
+      <body style="margin-bottom: 0px;
+margin-top: 0px;
+margin-left: 0px;
+margin-right: 0px;">
+
+ 
+
+      
+         <div class="landingbg"><div id="sketch">
+	<canvas id="paint"></canvas>
+</div>
+</div>
+                  
+ 
+
+
+<div id="fond18">
+<a href="mailto:aaron.tourtellot@72andsunny.com?subject=The Darkness RSVP&body=I will conspire. I will venture into The Darkness"><img alt="shop link" src="img/endcard_1.gif"/></a>
+
+</div>  
+
+
+<script> (function() {
+	var canvas = document.querySelector('#paint');
+	var ctx = canvas.getContext('2d');
+	
+	var sketch = document.querySelector('#sketch');
+	var sketch_style = getComputedStyle(sketch);
+	canvas.width = parseInt(sketch_style.getPropertyValue('width'));
+	canvas.height = parseInt(sketch_style.getPropertyValue('height'));
+
+	var mouse = {x: 0, y: 0};
+	var last_mouse = {x: 0, y: 0};
+	
+	/* Mouse Capturing Work */
+	canvas.addEventListener('mousemove', function(e) {
+		last_mouse.x = mouse.x;
+		last_mouse.y = mouse.y;
+		
+		mouse.x = e.pageX - this.offsetLeft;
+		mouse.y = e.pageY - this.offsetTop;
+	}, false);
+	
+	
+	/* Drawing on Paint App */
+	ctx.lineWidth = 3;
+	ctx.lineJoin = 'round';
+	ctx.lineCap = 'round';
+	ctx.strokeStyle = 'white';
+	
+
+
+	
+	canvas.addEventListener('mousemove', function(e) {
+		canvas.addEventListener('mousemove', onPaint, false);
+	}, false);
+	
+	canvas.addEventListener('mouseup', function() {
+		canvas.removeEventListener('mousemove', onPaint, false);
+	}, false);
+	
+	var onPaint = function() {
+		ctx.beginPath();
+		ctx.moveTo(last_mouse.x, last_mouse.y);
+		ctx.lineTo(mouse.x, mouse.y);
+		ctx.closePath();
+		ctx.stroke();
+	};
+	
+}());</script>
+   
+     
+  </body>
+  </html>
