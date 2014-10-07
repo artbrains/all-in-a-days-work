@@ -1,0 +1,45 @@
+.landingbg{
+          background: url("../img/darkness_1.png") no-repeat scroll center center / cover     rgba(0, 0, 0, 0);
+display: block;
+height: 100%;
+position: relative;
+width: 100%;
+     }
+
+
+#fond18 {
+	text-align:center;
+	position:fixed;
+	top:90%;
+	margin-top:-180px;
+	margin-left:-300px;
+	width:600px;
+	left:50%;
+}
+
+#fond18 hr {
+	border:none;
+	width:280px;
+	color:#ffffff;
+	height:5px;
+	background-color:#FFF;
+	margin-top:0px;
+	margin-bottom:20px;
+}
+
+
+#fond18 a {
+	opacity:1;
+	-moz-transition: all 0.2s ease-in-out;
+	-webkit-transition: all 0.2s ease-in-out;
+	-o-transition:all 0.2s ease-in-out;
+}
+
+#fond18 a:hover {
+	opacity:0.6;
+}
+
+#sketch{
+	height: 100%;
+}
+
